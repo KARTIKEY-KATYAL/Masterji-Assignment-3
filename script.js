@@ -39,7 +39,7 @@ function copyquote() {
   }, 5000); // Remove the highlight after 5 seconds
 }
 
-function sharetwitter() {
+function shareonX() {
   const quote = document.getElementById("quote");
   const author = document.getElementById("quoteauthor");
   if (
@@ -54,7 +54,16 @@ function sharetwitter() {
 }
 
 function exportquote() {
-  const container = document.getElementById("container");
+      const quote = document.getElementById("quote");
+      const author = document.getElementById("quoteauthor");
+      if (
+        quote.innerHTML === "Your Quotes Get displayed here" &&
+        author.innerHTML === ""
+      ) {
+        alert("No Quote to Export");
+        return;
+      }
+  const container = document.getElementById("quoteDisplay");
   html2canvas(container, {
     useCORS: true,
     allowTaint: true,
@@ -74,5 +83,5 @@ const sharetwitterbtn = document.getElementById("twitter");
 const exportquotebtn = document.getElementById("export");
 newquotebtn.addEventListener("click", fetchqoute);
 copyquotebtn.addEventListener("click", copyquote);
-sharetwitterbtn.addEventListener("click", sharetwitter);
+sharetwitterbtn.addEventListener("click", shareonX);
 exportquotebtn.addEventListener("click", exportquote);
