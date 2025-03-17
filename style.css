@@ -30,15 +30,19 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    ;
 }
 
 #quoteDisplay{
     width: 75%;
     margin: auto;
-    padding: 100px 40px;
+    padding: 40px 40px;
     border-radius: 10px;
     background-color: #FBFFFE;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
@@ -62,4 +66,13 @@ body{
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.btn:hover{
+    background-color: #FBFFFE;
+    color: #000022;
+}
+
+#authorinfo{
+    display: hidden;
 }
