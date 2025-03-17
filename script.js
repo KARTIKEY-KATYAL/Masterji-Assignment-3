@@ -12,7 +12,7 @@ async function fetchqoute(params) {
     author.innerHTML = `Author : ${data.data.author}`;
 
     // Set the background image of the body element
-    document.body.style.backgroundImage = `url(https://picsum.photos/2000/1000?blur=2&random=${Math.floor(
+    document.body.style.backgroundImage = `url(https://picsum.photos/2000/1000?grayscale&blur=2&random=${Math.floor(
       Math.random() * 100
     )})`;
   } catch (error) {
@@ -45,8 +45,10 @@ function copyquote() {
 }
 
 function shareonX() {
+  // get quote and author
   const quote = document.getElementById("quote");
   const author = document.getElementById("quoteauthor");
+  // edge case
   if (
     quote.innerHTML === "Your Quotes Get displayed here" &&
     author.innerHTML === ""
@@ -54,13 +56,17 @@ function shareonX() {
     alert("No Quote to Share");
     return;
   }
+  // method to tweet
   const twitterurl = `https://twitter.com/intent/tweet?text=${quote.innerText} - ${author.innerText}`;
+  // open twitter
   window.open(twitterurl, "_blank");
 }
 
 function exportquote() {
+  // get quote and author
   const quote = document.getElementById("quote");
   const author = document.getElementById("quoteauthor");
+  // edge case
   if (
     quote.innerHTML === "Your Quotes Get displayed here" &&
     author.innerHTML === ""
@@ -68,7 +74,9 @@ function exportquote() {
     alert("No Quote to Export");
     return;
   }
+  // get container
   const container = document.getElementById("quoteDisplay");
+  // used this to script and functionality to get screenshot
   html2canvas(container, {
     useCORS: true,
     allowTaint: true,
