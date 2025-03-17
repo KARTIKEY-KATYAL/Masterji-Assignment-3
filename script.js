@@ -38,7 +38,27 @@ function copyquote() {
   alert("Quote copied to clipboard!");
 }
 
+function sharetwitter() {
+    const quote = document.getElementById("quote");
+    const author = document.getElementById("quoteauthor");
+    if (
+        quote.innerHTML === "Your Quotes Get displayed here" &&
+        author.innerHTML === ""
+    ) {
+        alert("No Quote to Share");
+        return;
+    }
+    const twitterurl = `https://twitter.com/intent/tweet?text=${quote.innerText} - ${author.innerText}`;
+    window.open(twitterurl, "_blank");
+}
+function exportquote(){
+    
+}
 const newquotebtn = document.getElementById("newquote");
 const copyquotebtn = document.getElementById("copy");
+const sharetwitterbtn = document.getElementById("twitter");
+const exportquotebtn = document.getElementById("export");
 newquotebtn.addEventListener("click", fetchqoute);
 copyquotebtn.addEventListener("click", copyquote);
+sharetwitterbtn.addEventListener("click", sharetwitter);
+exportquotebtn.addEventListener("click", exportquote);
