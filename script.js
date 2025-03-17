@@ -10,6 +10,11 @@ async function fetchqoute(params) {
     const author = document.getElementById("quoteauthor");
     quote.innerHTML = `"${data.data.content}"`;
     author.innerHTML = `Author : ${data.data.author}`;
+
+    // Set the background image of the body element
+    document.body.style.backgroundImage = `url(https://picsum.photos/2000/1000?blur=2&random=${Math.floor(
+      Math.random() * 100
+    )})`;
   } catch (error) {
     document.getElementById("quote").innerHTML = "Error: " + error;
   }
@@ -54,15 +59,15 @@ function shareonX() {
 }
 
 function exportquote() {
-      const quote = document.getElementById("quote");
-      const author = document.getElementById("quoteauthor");
-      if (
-        quote.innerHTML === "Your Quotes Get displayed here" &&
-        author.innerHTML === ""
-      ) {
-        alert("No Quote to Export");
-        return;
-      }
+  const quote = document.getElementById("quote");
+  const author = document.getElementById("quoteauthor");
+  if (
+    quote.innerHTML === "Your Quotes Get displayed here" &&
+    author.innerHTML === ""
+  ) {
+    alert("No Quote to Export");
+    return;
+  }
   const container = document.getElementById("quoteDisplay");
   html2canvas(container, {
     useCORS: true,

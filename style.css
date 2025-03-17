@@ -8,9 +8,9 @@
 
 body {
     font-family: 'IBM Plex Sans', sans-serif;
-    background-color: #F15025;
     color: #333;
     line-height: 1.6;
+    background-color: #F0F0F0;
 }
 
 #headings {
@@ -19,7 +19,7 @@ body {
     text-underline-position: below;
     font-style: normal;
     font-size: 4rem;
-    color: #E9F1F7;
+    color: #FF2E00;
     text-align: center;
     font-weight: 900;
     margin-top: 2rem;
@@ -35,7 +35,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    ;
+    /* border: 2px solid black; */
 }
 
 #quoteDisplay {
@@ -51,6 +51,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
+    border: 2px solid black;
 }
 
 #buttons {
@@ -75,8 +76,9 @@ body {
 }
 
 .btn:hover {
-    background-color: #FBFFFE;
-    color: #000022;
+    background-color: lightgray;
+    border: 1px solid black;
+    color: blue;
 }
 
 #authorinfo {
