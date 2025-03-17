@@ -12,9 +12,12 @@ body{
 }
 
 #headings{
-    font-family: 'Big Shoulders Inline', cursive;
-    font-size: 3rem;
-    color: #FBFFFE;
+    font-family: "Big Shoulders Stencil", sans-serif;
+        font-optical-sizing: auto;
+        text-underline-position: below;
+        font-style: normal;
+    font-size: 4rem;
+    color: #E9F1F7;
     text-align: center;
     font-weight: 900;
     margin-top: 2rem;
