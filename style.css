@@ -79,3 +79,9 @@ body{
 #authorinfo{
     display: hidden;
 }
+
+.highlight {
+    background-color: rgb(7, 36, 228);
+    color: white;
+    transition: background-color 0.5s ease;
+}
