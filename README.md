@@ -137,7 +137,7 @@ The application is fully responsive with mobile-specific styling:
 ```
 
 ### Live URL
-https://masterji-assignment-1.vercel.app/
+https://masterji-assignment-3-eta.vercel.app/
 
 ### Setup and Usage
 
