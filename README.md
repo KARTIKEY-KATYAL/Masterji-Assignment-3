@@ -136,6 +136,9 @@ The application is fully responsive with mobile-specific styling:
 }
 ```
 
+### Live URL
+https://masterji-assignment-1.vercel.app/
+
 ### Setup and Usage
 
 1. Clone the repository
@@ -143,9 +146,4 @@ The application is fully responsive with mobile-specific styling:
 3. Click "New Quote" to generate random quotes
 4. Use additional buttons to interact with the generated quote
 
-### Future Improvements
 
-- Add more sharing options
-- Implement quote categories
-- Add favorite quotes storage
-- Implement custom background options

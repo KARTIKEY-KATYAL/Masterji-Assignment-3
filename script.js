@@ -12,17 +12,37 @@ async function fetchqoute(params) {
     author.innerHTML = `Author : ${data.data.author}`;
 
     // Set the background image of the body element
-    document.body.style.backgroundImage = `url(https://picsum.photos/2000/1000?grayscale&blur=2&random=${Math.floor(
-      Math.random() * 100
-    )})`;
+    const ImageURL = `https://picsum.photos/2000/1000?grayscale&blur=2&random=${Math.floor(Math.random() * 100)}`;
+
+    const imageResponse = await fetch(ImageURL);
+    if (imageResponse.ok) {
+      document.body.style.backgroundImage = `url('${imageResponse.url}')`;
+    } else {
+      console.error("Failed to load image.");
+    }
   } catch (error) {
-    document.getElementById("quote").innerHTML = "Error: " + error;
+    console.error("Error:", error);
+    alert("An error occurred while fetching the quote or image.");
   }
+
+// fetch(ImageURL)
+//   .then(response => {
+//     if (response.ok) {
+//       document.body.style.backgroundImage = `url('${response.url}')`;
+//     } else {
+//       console.error("Failed to load image.");
+//     }
+//   })
+//   .catch(err => {
+//     alert("Error loading image: " + err);
+//   });
 }
 
 function copyquote() {
   const quote = document.getElementById("quote");
   const author = document.getElementById("quoteauthor");
+
+
   if (
     quote.innerHTML === "Your Quotes Get displayed here" &&
     author.innerHTML === ""
@@ -31,9 +51,13 @@ function copyquote() {
     return;
   }
 
+
+
   const text = `${quote.innerText} ${author.innerText}`;
   navigator.clipboard.writeText(text);
   alert("Quote copied to clipboard!");
+
+
 
   // Add highlight effect
   quote.classList.add("highlight");
@@ -42,12 +66,19 @@ function copyquote() {
     quote.classList.remove("highlight");
     author.classList.remove("highlight");
   }, 5000); // Remove the highlight after 5 seconds
+
+
+
 }
+
+
 
 function shareonX() {
   // get quote and author
   const quote = document.getElementById("quote");
   const author = document.getElementById("quoteauthor");
+
+
   // edge case
   if (
     quote.innerHTML === "Your Quotes Get displayed here" &&
@@ -56,8 +87,12 @@ function shareonX() {
     alert("No Quote to Share");
     return;
   }
+
+
   // method to tweet
   const twitterurl = `https://twitter.com/intent/tweet?text=${quote.innerText} - ${author.innerText}`;
+
+  
   // open twitter
   window.open(twitterurl, "_blank");
 }
